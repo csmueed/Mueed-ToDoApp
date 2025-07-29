@@ -6,18 +6,21 @@ function addTask() {
   addButton.addEventListener("click", function (e) {
     const listItem = document.createElement("li");
     const deleteButton = document.createElement("button");
+    deleteButton.className = "deleteButton";
     deleteButton.innerHTML = "Delete";
-    deleteButton.style.width = '60px';
-    deleteButton.style.height = '25px';
-    deleteButton.style.borderRadius = '7px';
-    deleteButton.style.backgroundColor = 'yellow';
     const newTask = input.value;
     listItem.innerHTML = newTask;
     listItem.appendChild(deleteButton);
     lists.appendChild(listItem);
-    deleteButton.addEventListener('click', function(e){
-        listItem.remove();
-    })
+    deleteButton.addEventListener("click", function (e) {
+      listItem.remove();
+    });
+    listItem.addEventListener("dblclick", function (e) {
+      if (e.target.tagName !== "BUTTON") {
+        listItem.classList.toggle("completed-todotask");
+      }
+    });
+
     clearInputField();
   });
 }
@@ -25,5 +28,4 @@ addTask();
 
 function clearInputField() {
   input.value = "";
-};
-
+}

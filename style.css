@@ -27,14 +27,16 @@ body {
 .second-container {
         display: flex;
         width: 40vw;
-        justify-content: space-evenly;
+        justify-content: center;
         align-items: center;
+        gap: 5px;
 }
 .first-container {
-   display: flex;
+        display: flex;
         width: 40vw;
-        justify-content: space-evenly;
-        align-items: center; 
+        justify-content: center;
+        align-items: center;
+        gap: 5px; 
 }
 .completed-todotask {
     background-color: rgb(152, 0, 28);
@@ -52,5 +54,11 @@ body {
     height: 25px;
     border-radius: 7px;
 }
-
+.third-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
 

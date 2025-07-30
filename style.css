@@ -61,4 +61,10 @@ body {
     justify-content: center;
     align-items: center;
 }
-
+.listItemCSS {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}

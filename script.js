@@ -8,12 +8,13 @@ const incompleteTasks = document.querySelector("#Incomplete-tasks");
 function addTask() {
   addButton.addEventListener("click", function (e) {
     if (input.value.trim() === "") return;
-    const listItem = document.createElement("span");
+    const listItem = document.createElement("li");
+    listItem.style.display = "list-item";
     const deleteButton = document.createElement("button");
     deleteButton.className = "deleteButton";
     deleteButton.innerHTML = "Delete";
     const newTask = input.value;
-    listItem.textContent = newTask;
+    listItem.innerHTML = newTask;
     listItem.appendChild(deleteButton);
     listItem.classList.add("todo");
     lists.appendChild(listItem);
@@ -31,6 +32,11 @@ function addTask() {
 }
 
 addTask();
+input.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    addButton.click();
+  }
+});
 filteration();
 
 function clearInputField() {
